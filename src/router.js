@@ -23,7 +23,7 @@ export default new Router({
         if (to.params.name) {
           next();
         } else {
-          next({name: 'Login'})
+          next({ name: 'Login' })
         }
       }
     }
