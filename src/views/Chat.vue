@@ -22,11 +22,11 @@
 
 <script>
 import CreateMessage from "../components/CreateMessage";
-import fb from "./firebase/Init";
+import fb from "../firebase/Init";
 import moment from "moment";
 
 export default {
-  naem: "chat",
+  naem: "Chat",
   props: ["name"],
   components: {
     CreateMessage
@@ -44,9 +44,9 @@ export default {
           let doc = change.doc;
           this.messages.push({
             id: doc.id,
-            name: doc.data.name,
-            message: doc.data.message,
-            timestamp: moment(doc.data.timestamp).format("LTS")
+            name: doc.data().name,
+            message: doc.data().message,
+            timestamp: moment(doc.data().timestamp).format("LTS")
           });
         }
       });
